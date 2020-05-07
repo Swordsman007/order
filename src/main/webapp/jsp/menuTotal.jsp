@@ -15,13 +15,39 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>菜品分类</title>
+    <title>菜品价格汇总</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- basic styles -->
     <%@ include file="common/commonStyle.jsp"%>
-    <title>Title</title>
 </head>
-<body>
 
+<body>
+<div class="navbar navbar-default" id="navbar">
+    <%@include file="common/header.jsp"%>
+    <!-- /.container -->
+</div>
+
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+        </script>
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+            <div class="sidebar" id="sidebar">
+
+
+                <%@include file="common/leftTree.jsp"%>
+                <!-- /.nav-list -->
+
+                <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+                </script>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
