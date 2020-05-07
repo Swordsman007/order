@@ -64,6 +64,11 @@
                     <i class="icon-double-angle-right"></i>查看菜品分类
                 </a>
             </li>
+            <li <%if ("menuTotal".equalsIgnoreCase(_currentMenu)) {%> class='active'  <%}%>>
+                <a href="/menuTotal">
+                    <i class="icon-double-angle-right"></i>菜品价格汇总
+                </a>
+            </li>
             <li>
                 <a href="/addCategory">
                     <i class="icon-double-angle-right"></i>添加菜品分类

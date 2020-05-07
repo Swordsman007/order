@@ -209,6 +209,18 @@ public class OrderEntryControllor {
     }
 
     /**
+     * 展示所有菜品分类
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/menuTotal")
+    public String menuTotal(Model model) {
+        model.addAttribute("menuTotal", categoryManager.getAllCategories());
+        return "jsp/menuTotal.jsp";
+    }
+
+    /**
      * 展示添加菜品分类页面
      *
      * @param model
