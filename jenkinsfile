@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage('pull code'){
+            steps{
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '82aa93e2-516b-447b-ad38-7a4bb49eebb6', url: 'git@github.com:Swordsman007/order.git']]])
+            }
+        }
+        stage('build project'){
+            steps{
+               sh 'mvn clean package'
+            }
+        }
+        stage('publish project'){
+            steps{
+               deploy adapters: [tomcat9(credentialsId: '9f60e40d-6dc1-4ff2-b98a-88b138393e29', path: '', url: 'http://169.254.43.128:8090')], contextPath: null, war: 'target/*.war'
+            }
+        }
+    }
+}
