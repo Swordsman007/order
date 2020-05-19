@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('pull code'){
             steps{
-               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '82aa93e2-516b-447b-ad38-7a4bb49eebb6', url: 'git@github.com:Swordsman007/order.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '82aa93e2-516b-447b-ad38-7a4bb49eebb6', url: 'git@github.com:Swordsman007/order.git']]])
             }
         }
         stage('build project'){
